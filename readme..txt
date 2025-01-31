@@ -1,7 +1,7 @@
 How to run the Art Gallery Management System (agms) Project
 1. Download the zip file
 
-2. Extract the file and copy agms folder
+2. Extract the file and copy all files except SQL File
 
 3.Paste inside root directory
 
