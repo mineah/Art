@@ -60,16 +60,15 @@ include('includes/dbconnection.php');
       <!--show Now-->  
       <section class="contact py-lg-4">
          <div class="container-fluid py-lg-5">
-            <h3 class="title text-center mb-lg-5"><h2 class="head" align="center">
-               Search Result Againt keyword <span style="color:red">"<?php echo $_POST['search'];?>"</span></h2>
+            <h3 class="title text-center mb-lg-5"><h2 class="head" align="center"><?php echo $_GET['artname'];?></h2>
                <hr />
             <div class="row">
                <div class="side-bar col-lg-3">
                   <div class="search-hotel">
                      <h3 class="agileits-sear-head">Search Here..</h3>
-                     <form action="#" method="post">
-                        <input type="search" placeholder="Product name..." name="search" required="">
-                        <input type="submit" value=" ">
+                     <form action="search.php" method="post">
+                        <input type="search" placeholder="Art name..." name="search" required="">
+                        <input type="submit" name="submit">
                      </form>
                   </div>
 							<!-- price range -->
@@ -98,8 +97,8 @@ while ($row=mysqli_fetch_array($ret)) {
                <div class="left-ads-display col-lg-9">
                   <div class="row">
                   <?php
-                  $searchinput=$_POST['search'];
-$ret=mysqli_query($con,"select tblarttype.ID as atid,tblarttype.ArtType as typename,tblartproduct.ID as apid,tblartproduct.Title,tblartproduct.Image,tblartproduct.ArtType from tblartproduct join tblarttype on tblarttype.ID=tblartproduct.ArtType where tblartproduct.Title like '%$searchinput%'");
+                  $cid=$_GET['cid'];
+$ret=mysqli_query($con,"select tblarttype.ID as atid,tblarttype.ArtType as typename,tblartproduct.ID as apid,tblartproduct.Title,tblartproduct.Image,tblartproduct.ArtType from tblartproduct join tblarttype on tblarttype.ID=tblartproduct.ArtType where tblartproduct.ArtType='$cid'");
 $cnt=1;
 $count=mysqli_num_rows($ret);
 if($count>0){ 
@@ -116,7 +115,7 @@ while ($row=mysqli_fetch_array($ret)) {
                                        <a href="single-product.php?pid=<?php  echo $row['apid'];?>" class="link-product-add-cart"> View Details</a>
                                     </div>
                                  </div>
-                                 <!-- <span class="product-new-top">New</span> -->
+                                 <span class="product-new-top">New</span>
                               </div>
                               <div class="item-info-product">
                                  <div class="info-product-price">
