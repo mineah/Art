@@ -1,39 +1,20 @@
-CKEditor 4
-==========
+How to run the Art Gallery Management System (agms) Project
+1. Download the zip file
 
-Copyright (c) 2003-2012, CKSource - Frederico Knabben. All rights reserved.  
-http://ckeditor.com - See LICENSE.md for license information.
+2. Extract the file and copy all files except SQL file
 
-CKEditor is a text editor to be used inside web pages. It's not a replacement
-for desktop text editors like Word or OpenOffice, but a component to be used as
-part of web applications and websites.
+3.Paste inside root directory
 
-## Documentation
+4.Open PHPMyAdmin (http://localhost/phpmyadmin)
 
-The full editor documentation is available online at the following address:
-http://docs.ckeditor.com
+5. Create a database with the name agmsdb
 
-## Installation
+6. Import agmsdb.sql file(given inside the zip package in the SQL file folder)
 
-Installing CKEditor is an easy task. Just follow these simple steps:
+7. Run the script http://localhost/agms
 
- 1. **Download** the latest version from the CKEditor website:
-    http://ckeditor.com. You should have already completed this step, but be
-    sure you have the very latest version.
- 2. **Extract** (decompress) the downloaded file into the root of your website.
+Credential for Admin panel :
 
-**Note:** CKEditor is by default installed in the `ckeditor` folder. You can
-place the files in whichever you want though.
+Username: admin
+Password: Test@123
 
-## Checking Your Installation
-
-The editor comes with a few sample pages that can be used to verify that
-installation proceeded properly. Take a look at the `samples` directory.
-
-To test your installation, just call the following page at your website:
-
-	http://<your site>/<CKEditor installation path>/samples/index.html
-
-For example:
-
-	http://www.example.com/ckeditor/samples/index.html
